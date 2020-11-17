@@ -1,4 +1,4 @@
-module github.com/mp02/accounting-notebook/v1
+module github.com/mp02/accounting-notebook
 
 go 1.13
 

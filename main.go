@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	api "github.com/mp02/accounting-notebook/api"
+	"github.com/mp02/accounting-notebook/api"
 )
 
 func main() {
@@ -10,6 +10,7 @@ func main() {
 
 	//authorized := router.Group("/")
 	//authorized.Use(AuthRequired())
+
 	{
 		router.GET("/capital/:id", api.GetCapital)
 		router.POST("/credit/:id", api.PostCredit)
