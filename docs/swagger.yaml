@@ -1,0 +1,14 @@
+basePath: /v1
+host: localhost
+info:
+  contact:
+    email: o.gema.pg@gmail.com
+    name: Martin Pruyas
+    url: https://www.linkedin.com/in/martin-pruyas/
+  description: API Restful for credit and debit transactions
+  license:
+    name: mp.02
+  title: Accounting-notebook
+  version: "1.0"
+paths: {}
+swagger: "2.0"

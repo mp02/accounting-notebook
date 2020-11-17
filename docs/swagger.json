@@ -1,0 +1,19 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API Restful for credit and debit transactions",
+        "title": "Accounting-notebook",
+        "contact": {
+            "name": "Martin Pruyas",
+            "url": "https://www.linkedin.com/in/martin-pruyas/",
+            "email": "o.gema.pg@gmail.com"
+        },
+        "license": {
+            "name": "mp.02"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost",
+    "basePath": "/v1",
+    "paths": {}
+}

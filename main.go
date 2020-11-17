@@ -5,20 +5,26 @@ import (
 	"github.com/mp02/accounting-notebook/api"
 )
 
+// @title Accounting-notebook
+// @version 1.0
+// @description API Restful for credit and debit transactions
+
+// @contact.name Martin Pruyas
+// @contact.url https://www.linkedin.com/in/martin-pruyas/
+// @contact.email o.gema.pg@gmail.com
+
+// @license.name mp.02
+
+// @host localhost
+// @BasePath /v1
+
 func main() {
 	router := gin.Default()
-
-	//authorized := router.Group("/")
-	//authorized.Use(AuthRequired())
-
+	v1 := router.Group("/v1")
 	{
-		router.GET("/capital/:id", api.GetCapital)
-		router.POST("/credit/:id", api.PostCredit)
-		router.POST("/debit/:id", api.PostDebit)
+		v1.GET("/capital/:id", api.GetCapital)
+		v1.POST("/credit/:id", api.PostCredit)
+		v1.POST("/debit/:id", api.PostDebit)
 	}
-
-	// By default it serves on :8080 unless a
-	// PORT environment variable was defined.
 	router.Run()
-	// router.Run(":3000") for a hard coded port
 }

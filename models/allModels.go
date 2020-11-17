@@ -38,6 +38,7 @@ func (u *User) Credit(money float32) {
 func (u *User) Debit(money float32) error {
 	u.mu.Lock()
 	if u.Capital-money < 0 {
+		u.mu.Unlock()
 		return errors.New("Not enough credit")
 	}
 	u.Capital -= money

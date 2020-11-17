@@ -15,15 +15,31 @@ func init() {
 	user.PersonalInfo.LName = "Simpson"
 }
 
-//GetCapital ...
+// GetCapital godoc
+// @Summary Return an integer
+// @Description The amount is the capital of the user.
+// @Accept  json
+// @Produce  json
+// @Param id path int true "UserID"
+// @Success 200 float32 Example
+// @Failure 500 {object} error
+// @Router /capital [get]
 var GetCapital = func(ctx *gin.Context) {
 
 	capital := user.GetCapital()
 	ctx.JSON(http.StatusOK, capital)
-
+	return
 }
 
-//Posting post
+//PostCredit godoc
+// @Summary Post credit into an account
+// @Description .
+// @Accept  json
+// @Produce  json
+// @Param Request body models.BodyCredit true "Info for the transaction"
+// @Success 200 {object} models.User
+// @Failure 500 {object} error
+// @Router /capital [get]
 var PostCredit = func(ctx *gin.Context) {
 	var body models.BodyCredit
 	err := ctx.ShouldBind(&body)
@@ -36,6 +52,16 @@ var PostCredit = func(ctx *gin.Context) {
 
 }
 
+// PostDebit
+// @Summary Post debit into an account
+// @Description .
+// @Accept  json
+// @Produce  json
+// @Param Request body models.BodyDedit true "Info for the transaction"
+// @Success 200 {object} models.User
+// @Failure 400 {object} gin.H
+// @Failure 500 {object} error
+// @Router /capital [get]
 var PostDebit = func(ctx *gin.Context) {
 	var body models.BodyDebit
 	err := ctx.ShouldBind(&body)
